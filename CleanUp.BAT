@@ -360,8 +360,6 @@ TIMEOUT 1 > nul
 :: ========
 :: WinRAR..
 :: ========
-:: This moves WinRAR from the 'username specific folder' into the 'all users' folder
-::
 IF EXIST "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WinRAR\" ( 
 	IF EXIST "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\System Tools\WinRAR\" ( 
 		XCOPY "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WinRAR\" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\WinRAR\" /y >nul
@@ -379,8 +377,6 @@ IF EXIST "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Progr
 	echo Thankfully no WinRAR Links found! && echo.
 	)
 )
-:: This removes WinRAR from the 'all users folder' as its also duplicated
-::
 IF EXIST "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\WinRAR\" ( 
 	echo y|del "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\WinRAR\" >nul
 	rd "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\WinRAR\" >nul
